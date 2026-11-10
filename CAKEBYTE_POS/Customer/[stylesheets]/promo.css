@@ -1,0 +1,235 @@
+/*    HRRO      */
+
+*{
+    overflow-x: hidden;
+    cursor:pointer;
+}
+
+
+.hero-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    top: 27em;
+}
+
+.hero-buttons .btn {
+    display: inline-block;
+    padding: 10px 50px;
+    margin-right: 20px;
+    background-color: #FFB6C1;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #422800;
+    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid #422800;
+    box-shadow: #422800 4px 4px 0 0;
+}
+
+.hero-buttons .btn:hover {
+    color: #d6336c;
+    background-color: #fff;
+}
+
+
+
+
+/* Hero Section   (IMAGE)*/ 
+.hero {
+    position: relative; /* Change from absolute to relative */
+    width: 100%;
+    min-height: 90vh; /* Keeps the section height */
+    background: url('bg/SALE.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: -89px;
+
+}
+
+
+/*why*/
+
+.why {
+    position: relative; /* Ensures proper layout */
+    width: 100%;
+    min-height: 90vh; /* Keeps the section height */
+    background: url('bg/why.png') no-repeat center center/cover; /* Add your image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 50px 20px;
+    top: -30px;
+}
+
+
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 2 cards per row */
+    gap: 40px;
+    justify-content: center;
+    max-width: 100%;
+    margin: 50px auto 0;
+}
+
+.feature-card {
+    background: #ffdde5;
+    padding: 30px;
+    border: 2px solid #422800;
+    border-radius: 15px;
+    box-shadow: #422800 4px 4px 0 0;
+    text-align: left;
+    position: relative;
+    min-height: 80px;
+    display: flex;
+    width:250px;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid black; 
+}
+
+
+.feature-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: black;
+    text-align: center;
+}
+
+.feature-card p {
+    color: #555;
+    font-size: 16px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.read-more {
+    background-color: white;
+    border: 2px solid #422800;
+    border-radius: 10px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    position: absolute;
+    
+    bottom: 15px;
+    right: 15px;
+}
+
+
+
+
+/* MENU */
+
+    .cakes-section {
+        margin-top: -80px;
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    background: url('bg/menu.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+        text-align: center;
+
+
+    h1 {
+        font-size: 50px;
+        color: #D6336C;
+    }
+
+
+
+.cake-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    overflow-y: hidden;
+    max-width: 65%;
+    margin: 0px auto 10px; /* Added 30px top margin to push down the first row */
+
+}
+
+
+    .cake-card {
+        background: #fff;
+        min-height: 150px; /* Adjust height to avoid shrinking */
+        padding: 10px;
+        border: 2px solid #422800;
+        border-radius: 20px;
+        box-shadow: #422800 4px 4px 0 0;
+        text-align: center;
+        transition: 0.3s;
+        padding-bottom: 10px;
+        
+    }
+
+    .cake-card h3 {
+        font-size: 18px;
+        margin: 10px 0;
+        color: black;
+    }
+
+    .cake-card img {
+        width: 100%;
+        min-height: 100px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .feature-card h3 {
+        font-size: 50px;
+        margin: 10px 0;
+        color: black;
+    }
+
+    .cake-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        margin-top: 5px;
+        color: #555;
+    }
+
+    .price {
+        font-weight: bold;
+        color: #D6336C;
+    }
+
+    .rating {
+        color: #FFB400;
+    }
+
+.add-to-cart {
+    background: none;
+    border: none;
+    color: #D6336C; /* Match your theme color */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+    .add-to-cart:hover {
+        color: #FF5E78;
+    }
+
+
+
+
+
+
+
+
+
+
+

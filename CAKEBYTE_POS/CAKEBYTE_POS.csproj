@@ -1,0 +1,706 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EDCE9415-C919-49F3-AFF6-EA2C4D8F4932}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CAKEBYTE_POS</RootNamespace>
+    <AssemblyName>CAKEBYTE_POS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44385</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.OleDb, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.OleDb.9.0.4\lib\net462\System.Data.OleDb.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlClient, Version=4.6.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.9.0\lib\net462\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\image\bg\LS.png" />
+    <Content Include="Admin\image\logo.png" />
+    <Content Include="Admin\admin_style\invent.css" />
+    <Content Include="Admin\admin_style\logo.png" />
+    <Content Include="Admin\admin_style\nav_admin.css" />
+    <Content Include="Admin\admin_style\ot.css" />
+    <Content Include="Admin\admin_style\sales.css" />
+    <Content Include="Admin\home_admin.aspx" />
+    <Content Include="Admin\voucher.aspx" />
+    <Content Include="Admin\inventory.aspx" />
+    <Content Include="Admin\a_login.aspx" />
+    <Content Include="Admin\ot.aspx" />
+    <Content Include="Admin\sales.aspx" />
+    <Content Include="Customer - Copy\about.aspx" />
+    <Content Include="Customer - Copy\cart.aspx" />
+    <Content Include="Customer - Copy\customorder.aspx" />
+    <Content Include="Customer - Copy\c_home.aspx" />
+    <Content Include="Customer - Copy\index.aspx" />
+    <Content Include="Customer - Copy\login.aspx" />
+    <Content Include="Customer - Copy\menu.aspx" />
+    <Content Include="Customer\signup.aspx" />
+    <Content Include="Customer\profile.aspx" />
+    <Content Include="Customer\[stylesheets]\prof.css" />
+    <Content Include="TRANSLATED\Customer\CARLOTSSIGNUP.aspx" />
+    <Content Include="Customer - Copy\signup.aspx" />
+    <Content Include="Customer - Copy\track.aspx" />
+    <Content Include="Customer - Copy\[img]\background\menu.png" />
+    <Content Include="Customer - Copy\[img]\background\sasa.png" />
+    <Content Include="Customer - Copy\[img]\background\why.png" />
+    <Content Include="Customer - Copy\[img]\cart\b1.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\b2.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\b3.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\bf.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\c1.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\c2.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\c3.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\c4.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\c5.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\choco.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\c_fruit.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\d1.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\fer.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\lava.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\m.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\pastry.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\red.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\ss1.png" />
+    <Content Include="Customer - Copy\[img]\cart\ss2.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\ss3.jpg" />
+    <Content Include="Customer - Copy\[img]\cart\vanilla.jpg" />
+    <Content Include="Customer - Copy\[img]\logo.png" />
+    <Content Include="Customer - Copy\[img]\logreg\LS.png" />
+    <Content Include="Customer - Copy\[img]\menu\b1.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\b2.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\b3.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\bf.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\c1.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\c2.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\c3.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\c4.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\c5.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\choco.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\c_fruit.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\d1.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\fer.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\lava.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\m.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\pastry.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\red.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\ss1.png" />
+    <Content Include="Customer - Copy\[img]\menu\ss2.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\ss3.jpg" />
+    <Content Include="Customer - Copy\[img]\menu\vanilla.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\b1.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\b2.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\b3.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\bf.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\c1.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\c2.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\c3.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\c4.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\c5.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\CART EXPER\CART EXP 1_2.html" />
+    <Content Include="Customer - Copy\[img]\sample\CART EXPER\cart _ des.html" />
+    <Content Include="Customer - Copy\[img]\sample\CART EXPER\CART.css" />
+    <Content Include="Customer - Copy\[img]\sample\CART EXPER\img\bf.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\CART EXPER\img\pastry.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\CART EXPER\nav1.css" />
+    <Content Include="Customer - Copy\[img]\sample\CART EXPER\sasa.png" />
+    <Content Include="Customer - Copy\[img]\sample\choco.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\c_fruit.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\d1.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\fer.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\img\bf.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\lava.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\m.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\pastry.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\red.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\ss1.png" />
+    <Content Include="Customer - Copy\[img]\sample\ss2.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\ss3.jpg" />
+    <Content Include="Customer - Copy\[img]\sample\vanilla.jpg" />
+    <Content Include="Customer - Copy\[stylesheets]\bg\menu.png" />
+    <Content Include="Customer - Copy\[stylesheets]\bg\SALE.png" />
+    <Content Include="Customer - Copy\[stylesheets]\bg\why.png" />
+    <Content Include="Customer - Copy\[stylesheets]\CART.css" />
+    <Content Include="Customer - Copy\[stylesheets]\cust_ord.css" />
+    <Content Include="Customer - Copy\[stylesheets]\logo.png" />
+    <Content Include="Customer - Copy\[stylesheets]\menu.css" />
+    <Content Include="Customer - Copy\[stylesheets]\navi.css" />
+    <Content Include="Customer - Copy\[stylesheets]\promo.css" />
+    <Content Include="Customer - Copy\[stylesheets]\TRACK.css" />
+    <Content Include="Customer\about.aspx" />
+    <Content Include="Customer\cart.aspx" />
+    <Content Include="Customer\c_home.aspx" />
+    <Content Include="Customer\index.aspx" />
+    <Content Include="Customer\login.aspx" />
+    <Content Include="Customer\menu.aspx" />
+    <Content Include="Customer\customorder.aspx" />
+    <Content Include="Customer\track.aspx" />
+    <Content Include="Customer\[img]\background\menu.png" />
+    <Content Include="Customer\[img]\background\sasa.png" />
+    <Content Include="Customer\[img]\background\why.png" />
+    <Content Include="Customer\[img]\cart\b1.jpg" />
+    <Content Include="Customer\[img]\cart\b2.jpg" />
+    <Content Include="Customer\[img]\cart\b3.jpg" />
+    <Content Include="Customer\[img]\cart\bf.jpg" />
+    <Content Include="Customer\[img]\cart\c1.jpg" />
+    <Content Include="Customer\[img]\cart\c2.jpg" />
+    <Content Include="Customer\[img]\cart\c3.jpg" />
+    <Content Include="Customer\[img]\cart\c4.jpg" />
+    <Content Include="Customer\[img]\cart\c5.jpg" />
+    <Content Include="Customer\[img]\cart\choco.jpg" />
+    <Content Include="Customer\[img]\cart\c_fruit.jpg" />
+    <Content Include="Customer\[img]\cart\d1.jpg" />
+    <Content Include="Customer\[img]\cart\fer.jpg" />
+    <Content Include="Customer\[img]\cart\lava.jpg" />
+    <Content Include="Customer\[img]\cart\m.jpg" />
+    <Content Include="Customer\[img]\cart\pastry.jpg" />
+    <Content Include="Customer\[img]\cart\red.jpg" />
+    <Content Include="Customer\[img]\cart\ss1.png" />
+    <Content Include="Customer\[img]\cart\ss2.jpg" />
+    <Content Include="Customer\[img]\cart\ss3.jpg" />
+    <Content Include="Customer\[img]\cart\vanilla.jpg" />
+    <Content Include="Customer\[img]\logo.png" />
+    <Content Include="Customer\[img]\logreg\LS.png" />
+    <Content Include="Customer\[img]\menu\b1.jpg" />
+    <Content Include="Customer\[img]\menu\b2.jpg" />
+    <Content Include="Customer\[img]\menu\b3.jpg" />
+    <Content Include="Customer\[img]\menu\bf.jpg" />
+    <Content Include="Customer\[img]\menu\c1.jpg" />
+    <Content Include="Customer\[img]\menu\c2.jpg" />
+    <Content Include="Customer\[img]\menu\c3.jpg" />
+    <Content Include="Customer\[img]\menu\c4.jpg" />
+    <Content Include="Customer\[img]\menu\c5.jpg" />
+    <Content Include="Customer\[img]\menu\choco.jpg" />
+    <Content Include="Customer\[img]\menu\c_fruit.jpg" />
+    <Content Include="Customer\[img]\menu\d1.jpg" />
+    <Content Include="Customer\[img]\menu\fer.jpg" />
+    <Content Include="Customer\[img]\menu\lava.jpg" />
+    <Content Include="Customer\[img]\menu\m.jpg" />
+    <Content Include="Customer\[img]\menu\pastry.jpg" />
+    <Content Include="Customer\[img]\menu\red.jpg" />
+    <Content Include="Customer\[img]\menu\ss1.png" />
+    <Content Include="Customer\[img]\menu\ss2.jpg" />
+    <Content Include="Customer\[img]\menu\ss3.jpg" />
+    <Content Include="Customer\[img]\menu\vanilla.jpg" />
+    <Content Include="Customer\[img]\sample\b1.jpg" />
+    <Content Include="Customer\[img]\sample\b2.jpg" />
+    <Content Include="Customer\[img]\sample\b3.jpg" />
+    <Content Include="Customer\[img]\sample\bf.jpg" />
+    <Content Include="Customer\[img]\sample\c1.jpg" />
+    <Content Include="Customer\[img]\sample\c2.jpg" />
+    <Content Include="Customer\[img]\sample\c3.jpg" />
+    <Content Include="Customer\[img]\sample\c4.jpg" />
+    <Content Include="Customer\[img]\sample\c5.jpg" />
+    <Content Include="Customer\[img]\sample\CART EXPER\CART EXP 1_2.html" />
+    <Content Include="Customer\[img]\sample\CART EXPER\cart _ des.html" />
+    <Content Include="Customer\[img]\sample\CART EXPER\CART.css" />
+    <Content Include="Customer\[img]\sample\CART EXPER\img\bf.jpg" />
+    <Content Include="Customer\[img]\sample\CART EXPER\img\pastry.jpg" />
+    <Content Include="Customer\[img]\sample\CART EXPER\nav1.css" />
+    <Content Include="Customer\[img]\sample\CART EXPER\sasa.png" />
+    <Content Include="Customer\[img]\sample\choco.jpg" />
+    <Content Include="Customer\[img]\sample\c_fruit.jpg" />
+    <Content Include="Customer\[img]\sample\d1.jpg" />
+    <Content Include="Customer\[img]\sample\fer.jpg" />
+    <Content Include="Customer\[img]\sample\img\bf.jpg" />
+    <Content Include="Customer\[img]\sample\lava.jpg" />
+    <Content Include="Customer\[img]\sample\m.jpg" />
+    <Content Include="Customer\[img]\sample\pastry.jpg" />
+    <Content Include="Customer\[img]\sample\red.jpg" />
+    <Content Include="Customer\[img]\sample\ss1.png" />
+    <Content Include="Customer\[img]\sample\ss2.jpg" />
+    <Content Include="Customer\[img]\sample\ss3.jpg" />
+    <Content Include="Customer\[img]\sample\vanilla.jpg" />
+    <Content Include="Customer\[stylesheets]\bg\menu.png" />
+    <Content Include="Customer\[stylesheets]\bg\SALE.png" />
+    <Content Include="Customer\[stylesheets]\bg\why.png" />
+    <Content Include="Customer\[stylesheets]\CART.css" />
+    <Content Include="Customer\[stylesheets]\cust_ord.css" />
+    <Content Include="Customer\[stylesheets]\logo.png" />
+    <Content Include="Customer\[stylesheets]\menu.css" />
+    <Content Include="Customer\[stylesheets]\navi.css" />
+    <Content Include="Customer\[stylesheets]\promo.css" />
+    <Content Include="Customer\[stylesheets]\TRACK.css" />
+    <Content Include="TRANSLATED\Customer\about.aspx" />
+    <Content Include="TRANSLATED\Customer\cart.aspx" />
+    <Content Include="TRANSLATED\Customer\customorder.aspx" />
+    <Content Include="TRANSLATED\Customer\c_home.aspx" />
+    <Content Include="TRANSLATED\Customer\index.aspx" />
+    <Content Include="TRANSLATED\Customer\login - Copy %282%29.aspx" />
+    <Content Include="TRANSLATED\Customer\menu.aspx" />
+    <Content Include="TRANSLATED\Customer\signup.aspx" />
+    <Content Include="TRANSLATED\Customer\track.aspx" />
+    <Content Include="TRANSLATED\Customer\[img]\background\menu.png" />
+    <Content Include="TRANSLATED\Customer\[img]\background\sasa.png" />
+    <Content Include="TRANSLATED\Customer\[img]\background\why.png" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\b1.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\b2.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\b3.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\bf.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\c1.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\c2.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\c3.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\c4.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\c5.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\choco.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\c_fruit.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\d1.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\fer.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\lava.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\m.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\pastry.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\red.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\ss1.png" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\ss2.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\ss3.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\vanilla.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\logo.png" />
+    <Content Include="TRANSLATED\Customer\[img]\logreg\LS.png" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\b1.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\b2.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\b3.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\bf.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\c1.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\c2.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\c3.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\c4.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\c5.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\choco.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\c_fruit.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\d1.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\fer.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\lava.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\m.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\pastry.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\red.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\ss1.png" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\ss2.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\ss3.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\vanilla.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\b1.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\b2.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\b3.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\bf.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\c1.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\c2.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\c3.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\c4.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\c5.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\CART EXPER\CART EXP 1_2.html" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\CART EXPER\cart _ des.html" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\CART EXPER\CART.css" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\CART EXPER\img\bf.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\CART EXPER\img\pastry.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\CART EXPER\nav1.css" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\CART EXPER\sasa.png" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\choco.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\c_fruit.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\d1.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\fer.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\img\bf.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\lava.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\m.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\pastry.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\red.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\ss1.png" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\ss2.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\ss3.jpg" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\vanilla.jpg" />
+    <Content Include="TRANSLATED\Customer\[stylesheets]\bg\menu.png" />
+    <Content Include="TRANSLATED\Customer\[stylesheets]\bg\SALE.png" />
+    <Content Include="TRANSLATED\Customer\[stylesheets]\bg\why.png" />
+    <Content Include="TRANSLATED\Customer\[stylesheets]\CART.css" />
+    <Content Include="TRANSLATED\Customer\[stylesheets]\cust_ord.css" />
+    <Content Include="TRANSLATED\Customer\[stylesheets]\logo.png" />
+    <Content Include="TRANSLATED\Customer\[stylesheets]\menu.css" />
+    <Content Include="TRANSLATED\Customer\[stylesheets]\navi.css" />
+    <Content Include="TRANSLATED\Customer\[stylesheets]\promo.css" />
+    <Content Include="TRANSLATED\Customer\[stylesheets]\TRACK.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\home_admin.aspx.cs">
+      <DependentUpon>home_admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\home_admin.aspx.designer.cs">
+      <DependentUpon>home_admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\voucher.aspx.cs">
+      <DependentUpon>voucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\voucher.aspx.designer.cs">
+      <DependentUpon>voucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\inventory.aspx.cs">
+      <DependentUpon>inventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\inventory.aspx.designer.cs">
+      <DependentUpon>inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\a_login.aspx.cs">
+      <DependentUpon>a_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\a_login.aspx.designer.cs">
+      <DependentUpon>a_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ot.aspx.cs">
+      <DependentUpon>ot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ot.aspx.designer.cs">
+      <DependentUpon>ot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\sales.aspx.cs">
+      <DependentUpon>sales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\sales.aspx.designer.cs">
+      <DependentUpon>sales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer - Copy\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer - Copy\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer - Copy\cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer - Copy\cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer - Copy\customorder.aspx.cs">
+      <DependentUpon>customorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer - Copy\customorder.aspx.designer.cs">
+      <DependentUpon>customorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer - Copy\c_home.aspx.cs">
+      <DependentUpon>c_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer - Copy\c_home.aspx.designer.cs">
+      <DependentUpon>c_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer - Copy\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer - Copy\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer - Copy\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer - Copy\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer - Copy\menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer - Copy\menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\CARLOTSSIGNUP.aspx.cs">
+      <DependentUpon>CARLOTSSIGNUP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\CARLOTSSIGNUP.aspx.designer.cs">
+      <DependentUpon>CARLOTSSIGNUP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer - Copy\signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer - Copy\signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer - Copy\track.aspx.cs">
+      <DependentUpon>track.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer - Copy\track.aspx.designer.cs">
+      <DependentUpon>track.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\c_home.aspx.cs">
+      <DependentUpon>c_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\c_home.aspx.designer.cs">
+      <DependentUpon>c_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\customorder.aspx.cs">
+      <DependentUpon>customorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\customorder.aspx.designer.cs">
+      <DependentUpon>customorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\track.aspx.cs">
+      <DependentUpon>track.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\track.aspx.designer.cs">
+      <DependentUpon>track.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TRANSLATED\Customer\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\customorder.aspx.cs">
+      <DependentUpon>customorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\customorder.aspx.designer.cs">
+      <DependentUpon>customorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\c_home.aspx.cs">
+      <DependentUpon>c_home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\c_home.aspx.designer.cs">
+      <DependentUpon>c_home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\login - Copy %282%29.aspx.cs">
+      <DependentUpon>login - Copy %282%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\login - Copy %282%29.aspx.designer.cs">
+      <DependentUpon>login - Copy %282%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\menu.aspx.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\menu.aspx.designer.cs">
+      <DependentUpon>menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\track.aspx.cs">
+      <DependentUpon>track.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TRANSLATED\Customer\track.aspx.designer.cs">
+      <DependentUpon>track.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Customer\[img]\cart\b4.webp" />
+    <Content Include="Customer\[img]\cart\d2.avif" />
+    <Content Include="Customer\[img]\cart\d3.webp" />
+    <Content Include="Customer\[img]\menu\b4.webp" />
+    <Content Include="Customer\[img]\menu\d2.avif" />
+    <Content Include="Customer\[img]\menu\d3.webp" />
+    <Content Include="Customer\[img]\sample\b4.webp" />
+    <Content Include="Customer\[img]\sample\d2.avif" />
+    <Content Include="Customer\[img]\sample\d3.webp" />
+    <Content Include="Customer - Copy\[img]\cart\b4.webp" />
+    <Content Include="Customer - Copy\[img]\cart\d2.avif" />
+    <Content Include="Customer - Copy\[img]\cart\d3.webp" />
+    <Content Include="Customer - Copy\[img]\menu\b4.webp" />
+    <Content Include="Customer - Copy\[img]\menu\d2.avif" />
+    <Content Include="Customer - Copy\[img]\menu\d3.webp" />
+    <Content Include="Customer - Copy\[img]\sample\b4.webp" />
+    <Content Include="Customer - Copy\[img]\sample\d2.avif" />
+    <Content Include="Customer - Copy\[img]\sample\d3.webp" />
+    <None Include="packages.config" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\b4.webp" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\d2.avif" />
+    <Content Include="TRANSLATED\Customer\[img]\cart\d3.webp" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\b4.webp" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\d2.avif" />
+    <Content Include="TRANSLATED\Customer\[img]\menu\d3.webp" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\b4.webp" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\d2.avif" />
+    <Content Include="TRANSLATED\Customer\[img]\sample\d3.webp" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Customer - Copy\App_LocalResources\" />
+    <Folder Include="Customer\App_LocalResources\" />
+    <Folder Include="TRANSLATED\Customer\App_LocalResources\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59063</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44385/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,89 @@
+body {
+            font-family: Poppins, sans-serif;
+            padding: 20px;
+            background-image: white;
+        }
+        .tabs {
+            margin-top: 100px;
+            display: flex;
+            
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 5px;
+        }
+        .tab {
+           padding: 10px 20px;
+            background-color: #fa9aab;
+            border-radius: 10px 10px 0 0;
+            margin: 0 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            box-shadow: #422800 4px 4px 0 0;
+border: 2px solid #422800;  
+        }
+        .tab.active {
+            background-color: #ffdde5;
+            color: #D6336C;
+            border: 3px solid #ffdde5;
+            box-shadow: #422800 4px 4px 0 0;
+border: 2px solid #422800;  
+        }
+        .tab-content {
+            background-color: #ffdde5;
+            padding: 10px;
+            border-radius: 10px;
+            width: 97%;
+            margin: 0px 0;
+            text-align: left;
+            border: 0px solid #fa9aab;
+            display: none;
+            max-height: 480px; /* Set max height */
+            overflow-y: auto; /* Enable scrolling */
+            overflow-x: hidden;
+            box-shadow: #422800 4px 4px 0 0;
+            border: 2px solid #422800;
+             margin: 20px auto;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .order-card {
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+            padding: 15px;
+            width: 98%;
+            margin-bottom: 15px; 
+            min-height: 100px;
+            background-color: white;
+        }
+        .order-card img {
+            width: 120px;
+            height: 120px;
+            border: 2px solid black;
+            margin-right: 10px;
+        }
+        .order-details {
+            flex-grow: 1;
+            margin-right: 10px;
+            
+        }
+        .order-details p {
+            margin: 5px 0;
+            
+        }
+
+
+        .order-info {
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .status {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .status.pending { color: #f0ad4e; }
+        .status.delivery { color: #5bc0de; }
+        .status.cancelled { color: #d9534f; }

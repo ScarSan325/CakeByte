@@ -1,0 +1,90 @@
+
+* {
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('img/logreg/LS.png') no-repeat center center;
+    background-size: cover;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    justify-content: space-between;
+    align-items: stretch;
+    width: 120%; /* Makes it wider */
+    max-width: 1100px; /* Expands width but keeps it manageable */
+    height: auto; /* Adjusts dynamically */
+    min-height: 610px; /* Ensures it doesn't shrink */
+    background: white;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    border: 2px solid #422800;
+    overflow: hidden;
+    margin: 100px 50px 0 auto; /* Centers horizontally */
+    margin-left:-10%;
+}
+.column {
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 28px;
+        color: #D6336C;
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+input,
+select,
+textarea {
+    width: 96%; /* Ensures uniform width */
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 5px 0;
+    display: block;
+    box-sizing: border-box; /* Ensures padding & border don't affect width */
+}
+
+textarea {
+    resize: none; /* Prevents resizing */
+    height: 100px; /* Set a fixed height */
+}
+
+
+button {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: #422800 2px 2px 0 0;
+    border-radius: 30px;
+    color: #422800;
+    padding: 5px 18px;
+    background-color: transparent;
+    text-align: center;
+    margin-right:5px;
+    background-color: #FFB6C1;
+    margin: 10px auto 0 auto; /* Centers button horizontally */
+    display: block; /* Ensures it takes up full width for centering */
+}
+
+button:active {
+    color: #D6336C;
+    background-color: #fff;
+}
+

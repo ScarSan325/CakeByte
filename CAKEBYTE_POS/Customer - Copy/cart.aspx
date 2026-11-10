@@ -1,0 +1,290 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="cart.aspx.cs" Inherits="CAKEBYTE_POS.Customer.cart" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+    <link rel="stylesheet" type="text/css" href="[stylesheets]/navi.css"/>
+    <link rel="stylesheet" type="text/css" href="[stylesheets]/cart.css"/>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<div class="header">
+    <div class="left-section">
+        <div class="logo">
+            <a href="c_home.aspx">
+                <img src="[img]/logo.png" alt="CakeByte Hub Logo"/>
+            </a>
+        </div>
+        <div class="site-name">CakeByte Hub</div>
+    </div>
+
+    <div class="right-section">
+        <div class="account">
+            <button id="accountBtn">Logout</button>
+        </div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</div>
+
+<!-- SIDEBAR NAVIGATION (Right Side) -->
+<div class="sidebar" id="sidebar">
+    <span class="close-btn" id="closeSidebar">&times;</span>
+        <a href="c_home.aspx">Home</a>
+        <a href="menu.aspx">Menu</a>
+        <a href="customorder.aspx">Custom Order</a>
+        <a href="cart.aspx">Cart</a>
+        <a href="track.aspx">Track Order</a>
+        <a href="about.aspx">About</a>
+</div>
+
+<!-- Overlay Background -->
+<div class="overlay" id="overlay"></div>
+
+<script>
+    document.getElementById("accountBtn").addEventListener("click", function () {
+        window.location.href = "login.aspx";
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.getElementById("menuIcon");
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+        const closeSidebar = document.getElementById("closeSidebar");
+
+        if (menuIcon && sidebar && overlay && closeSidebar) {
+            menuIcon.addEventListener("click", function () {
+                console.log("Menu clicked!"); // Debugging
+                sidebar.classList.add("show");
+                overlay.classList.add("show");
+            });
+
+            closeSidebar.addEventListener("click", function () {
+                sidebar.classList.remove("show");
+                overlay.classList.remove("show");
+            });
+
+            overlay.addEventListener("click", function () {
+                sidebar.classList.remove("show");
+                overlay.classList.remove("show");
+            });
+        } else {
+            console.error("Navbar elements not found!");
+        }
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="cart-container">
+        <h2>Your Shopping Cart</h2>
+
+        <!-- Chocolate Cake -->
+        <div class="cart-item">
+            <input type="checkbox" class="item-checkbox" value="15" data-name="Chocolate Cake" data-description="Rich chocolate flavor" data-price="15">
+            <div class="item-info">
+                <img src="[img]/cart/bf.jpg" alt="Cake">
+                <div class="item-details">
+                    <span><strong>Chocolate Cake</strong></span>
+                    <span class="item-description">Rich chocolate flavor</span>
+                </div>
+            </div>
+            <div class="quantity-container">
+                <button class="quantity-btn minus">−</button>
+                <input type="text" class="quantity-input" value="1" readonly>
+                <button class="quantity-btn plus">+</button>
+            </div>
+            <span class="item-price">₱15.00</span>
+        </div>
+
+        <!-- Strawberry Pastry -->
+        <div class="cart-item">
+            <input type="checkbox" class="item-checkbox" value="7" data-name="Strawberry Pastry" data-description="Sweet and fresh" data-price="7">
+            <div class="item-info">
+                <img src="[img]/cart/pastry.jpg" alt="Pastry">
+                <div class="item-details">
+                    <span><strong>Strawberry Pastry</strong></span>
+                    <span class="item-description">Sweet and fresh</span>
+                </div>
+            </div>
+            <div class="quantity-container">
+                <button class="quantity-btn minus">−</button>
+                <input type="text" class="quantity-input" value="1" readonly>
+                <button class="quantity-btn plus">+</button>
+            </div>
+            <span class="item-price">₱7.00</span>
+        </div>
+
+        <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="receipt-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <!-- LEFT SIDE: Order Summary -->
+            <div class="modal-left">
+                <h2>Order Summary</h2>
+                <div id="receipt-items"></div>
+
+                <p><strong>Subtotal:</strong> ₱<span id="subtotal">0.00</span></p>
+                <p><strong>Discount:</strong> ₱<span id="discount">0.00</span></p>
+                <p><strong>Shipping Fee:</strong> ₱<span id="shipping">5.00</span></p>
+                <p><strong>Total:</strong> ₱<span id="total">0.00</span></p>
+
+                <p><strong>Payment Method:</strong> 
+                    <select id="payment-method" class="input-field">
+                        <option value="paypal">Paypal</option>
+                        <option value="gcash">Gcash</option>
+                        <option value="cod">Cash on Delivery</option>
+                    </select>
+                </p>
+
+
+
+            </div>
+
+            <!-- RIGHT SIDE: Customer Details Form -->
+            <div class="modal-right">
+                <h2>Checkout Details</h2>
+                <p><strong>Name:</strong> <input type="text" id="customer-name" class="input-field" placeholder="Enter your name"></p>
+                <p><strong>Contact Number:</strong> <input type="text" id="contact-number" class="input-field" placeholder="Enter your phone number"></p>
+                <p><strong>Address:</strong> <input type="text" id="address" class="input-field" placeholder="Enter delivery address"></p>
+                <p><strong>Notes:</strong> <textarea id="notes" class="input-field" placeholder="Any special requests?"></textarea></p>
+                
+                <div class="checkout-options">
+                    <button class="book-btn" onclick="finalizeCheckout('Book')">Book</button>
+                    <button class="pay-now-btn" onclick="finalizeCheckout('Pay Now')">Pay Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quantity Button Logic
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".cart-item").forEach(item => {
+                const minusBtn = item.querySelector(".minus");
+                const plusBtn = item.querySelector(".plus");
+                const quantityInput = item.querySelector(".quantity-input");
+
+                minusBtn.addEventListener("click", function () {
+                    let currentValue = parseInt(quantityInput.value);
+                    if (currentValue > 1) {
+                        quantityInput.value = currentValue - 1;
+                    }
+                });
+
+                plusBtn.addEventListener("click", function () {
+                    let currentValue = parseInt(quantityInput.value);
+                    quantityInput.value = currentValue + 1;
+                });
+            });
+        });
+
+        // Proceed to Checkout Logic
+      function proceedToCheckout() {
+    let selectedItems = document.querySelectorAll('.item-checkbox:checked');
+    let receiptItemsContainer = document.getElementById("receipt-items");
+    let subtotal = 0;
+
+    // Clear previous receipt items
+    receiptItemsContainer.innerHTML = "";
+
+    if (selectedItems.length === 0) {
+        alert("Please select at least one item to checkout.");
+        return;
+    }
+
+    selectedItems.forEach(item => {
+        let itemName = item.getAttribute("data-name");
+        let itemDescription = item.getAttribute("data-description");
+        let itemPrice = parseFloat(item.getAttribute("data-price"));
+        let quantity = parseInt(item.parentElement.querySelector(".quantity-input").value);
+        let totalItemPrice = itemPrice * quantity;
+        subtotal += totalItemPrice;
+
+        let itemHtml = `
+            <div class="receipt-item">
+                <img src="${item.parentElement.querySelector("img").src}" alt="${itemName}">
+                <div class="item-details">
+                    <p><strong>${itemName}</strong></p>
+                    <p class="item-description">${itemDescription}</p>
+                </div>
+                <div class="item-pricing">
+                    <span class="item-quantity">${quantity}</span> 
+                    <span class="multiply-sign"> × </span>
+                    <span class="item-price">₱${itemPrice.toFixed(2)}</span> 
+                    <span class="equal-sign"> <br> </span>
+                    <span class="item-subtotal"><strong>₱${totalItemPrice.toFixed(2)}</strong></span>
+                </div>
+            </div>
+        `;
+
+        receiptItemsContainer.innerHTML += itemHtml;
+    });
+
+    // Update price values
+    document.getElementById("subtotal").innerText = subtotal.toFixed(2);
+    document.getElementById("total").innerHTML = `<strong>$${(subtotal + 5.00).toFixed(2)}</strong>`; // Final total in bold
+
+    // Show modal
+    document.getElementById("receipt-modal").style.display = "block";
+}
+
+        function closeModal() {
+            document.getElementById("receipt-modal").style.display = "none";
+        }
+
+        function finalizeCheckout(type) {
+            let name = document.getElementById("customer-name").value;
+            let contact = document.getElementById("contact-number").value;
+            let address = document.getElementById("address").value;
+            let notes = document.getElementById("notes").value;
+            let payment = document.getElementById("payment-method").value;
+
+            if (!name || !contact || !address) {
+                alert("Please fill out all fields!");
+                return;
+            }
+
+            alert(`Order ${type} confirmed!\nName: ${name}\nContact: ${contact}\nAddress: ${address}\nNotes: ${notes}\nPayment: ${payment}`);
+            closeModal();
+        }
+    </script>
+
+</body>
+</html>
